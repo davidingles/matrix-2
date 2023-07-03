@@ -1,31 +1,32 @@
 ---
 ---
 
-<div class="border-2 flex justify-center py-4 bg-white cabecera">
-    <img class="w-[22rem]" src="./logo-aux.svg" alt="">
-</div>
+<main class="border-2 flex justify-center py-4 bg-white ">
+    <div class="cabecera"><img class="w-[22rem]" src="./logo-aux.svg" alt=""></div>
+</main>
 
 <script>
     setTimeout( function(){
-        document.querySelector('div').classList.add('animated');
-    }, 1000 )
+        document.querySelector('div').classList.add('animacion');
+    },  0)
 </script>
 
 <style>
     .cabecera{
         opacity: 0;
-        transition: opacity 1s ease-in-out;;
     }
 
     @keyframes fade-in{
         from {
             opacity:0;
+            transform: translateY(55%);
         }
         to {
             opacity: 1;
+            transform: translateY(0%);
         }
     }
-    .cabecera.animated{
-        animation: fade-in 1s ease-in-out 1s forwards;
+    .cabecera.animacion{
+        animation: fade-in 2s ease-in-out 1s forwards;
     }
 </style>
