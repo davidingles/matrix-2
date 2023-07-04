@@ -2,7 +2,11 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			boxShadow:{
+				'sombrita-amarilla': '0px 0px 111px 0px  rgba(223, 172, 18,.2)'
+			},
+		},
 	},
 	plugins: [],
 }

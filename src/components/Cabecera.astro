@@ -1,13 +1,21 @@
 ---
+import { menuItems } from '/src/data/data'
 ---
 
-<main class="border-2 flex justify-center py-4 bg-white ">
-    <div class="cabecera"><img class="w-[22rem]" src="./logo-aux.svg" alt=""></div>
+<nav class="flex justify-center bg-white py-4">
+    <ul class="flex">{menuItems.map( item => (
+        <li class="px-4"><a href={item.url}>{item.titulo}</a></li>
+    ))}
+
+    </ul>
+</nav>
+<main class="flex justify-center py-4 bg-white ">
+    <div id="logo" class="cabecera flex-grow-0 mx-auto"><img class="w-[12rem] md:w-[22rem]" src="./logo-aux.svg" alt=""></div>
 </main>
 
 <script>
     setTimeout( function(){
-        document.querySelector('div').classList.add('animacion');
+        document.querySelector('#logo').classList.add('animacion');
     },  0)
 </script>
 
@@ -16,7 +24,7 @@
         opacity: 0;
     }
 
-    @keyframes fade-in{
+    @keyframes fantasma{
         from {
             opacity:0;
             transform: translateY(55%);
@@ -27,6 +35,6 @@
         }
     }
     .cabecera.animacion{
-        animation: fade-in 2s ease-in-out 1s forwards;
+        animation: fantasma 1s ease-in-out 0s forwards;
     }
 </style>
