@@ -1,32 +1,65 @@
 ---
-import { menuItems } from '/src/data/data'
+import { menuItems } from "../data/data";
+
+
 ---
 
-<nav class="flex justify-center bg-white py-4">
-    <ul class="flex">{menuItems.map( item => (
-        <li class="px-4"><a href={item.url}>{item.titulo}</a></li>
-    ))}
-
+<!-- //NAVBAR========================================== -->
+<nav class='flex justify-center bg-white py-4 relative'>
+    <ul id="david" class='flex'>
+        {
+            menuItems.map((item) => (
+                <li class='px-4'>
+                    <a href={item.url}>{item.titulo}</a>
+                </li>
+            ))
+        }
     </ul>
+
+    <div id="menuDavid" class={`
+    absolute
+        bg-black/5 border-b-4 border-[--auxiliar1]
+        translate-x-[var(--left)]
+        translate-y-[var(--top)]
+        left-0 top-0
+        w-[var(--width)]
+        h-[var(--height)]
+        transition-all duration-500
+        ease-in-out opacity-0 
+    `}>
+
+    </div>
+
 </nav>
-<main class="flex justify-center py-4 bg-white ">
-    <div id="logo" class="cabecera flex-grow-0 mx-auto"><img class="w-[12rem] md:w-[22rem]" src="./logo-aux.svg" alt=""></div>
+
+<!-- //LOGO================================================== -->
+<main class='flex justify-center py-4 bg-white'>
+    <div
+        id='logo'
+        class='cabecera flex-grow-0 mx-auto'
+    >
+        <img
+            class='w-[18rem] md:w-[22rem]'
+            src='./logo-aux.svg'
+            alt=''
+        />
+    </div>
 </main>
 
 <script>
-    setTimeout( function(){
-        document.querySelector('#logo').classList.add('animacion');
-    },  0)
+    setTimeout(function () {
+        document.querySelector('#logo').classList.add('animacion')
+    }, 0)
 </script>
 
 <style>
-    .cabecera{
+    .cabecera {
         opacity: 0;
     }
 
-    @keyframes fantasma{
+    @keyframes fantasma {
         from {
-            opacity:0;
+            opacity: 0;
             transform: translateY(55%);
         }
         to {
@@ -34,7 +67,28 @@ import { menuItems } from '/src/data/data'
             transform: translateY(0%);
         }
     }
-    .cabecera.animacion{
+    .cabecera.animacion {
         animation: fantasma 1s ease-in-out 0s forwards;
     }
 </style>
+
+<script>
+    const dav = document.querySelectorAll("#david li")
+    const menuD = document.querySelector("#menuDavid") as HTMLElement
+
+    dav.forEach( (i) => {
+        console.log('david')
+        i.addEventListener("mouseenter", () => {
+            console.log(i.getBoundingClientRect())
+            const { left, top, width, height } = i.getBoundingClientRect()
+
+            menuD.style.setProperty("--left", `${left}px`)
+            menuD.style.setProperty("--top", `${top}px`)
+            menuD.style.setProperty("--width", `${width}px`)
+            menuD.style.setProperty("--height", `${height}px`)
+
+            menuD.style.opacity = "1"
+            menuD.style.visibility= "visible"
+        })
+    } )
+</script>

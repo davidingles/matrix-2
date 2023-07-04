@@ -1,7 +1,4 @@
-interface MenuItems {
-    titulo: string;
-    url: string;
-}
+import { MenuItems } from "../../types/types"
 
 export const menuItems: MenuItems[] = [
     {
