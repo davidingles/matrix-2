@@ -1,0 +1,77 @@
+html
+<nav>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-btn">
+    <span class="hamburger"></span>
+  </label>
+  <ul class="menu">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Acerca de</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+</nav>
+<style>
+    
+    /* Estilos para el menú de hamburguesa */
+    .menu-btn {
+      display: none; /* Ocultar el botón en pantallas grandes */
+    }
+     .menu {
+      display: flex;
+      justify-content: flex-end;
+    }
+     .menu li {
+      margin-left: 20px;
+    }
+     /* Estilos para el botón de hamburguesa */
+    .hamburger {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: black;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+     .hamburger:before,
+    .hamburger:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background-color: black;
+      transition: transform 0.3s ease;
+    }
+     .hamburger:before {
+      top: -10px;
+    }
+     .hamburger:after {
+      top: 10px;
+    }
+     /* Media query para pantallas pequeñas */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block; /* Mostrar el botón en pantallas pequeñas */
+        cursor: pointer;
+      }
+       .menu {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+      }
+       /* Estilos para mostrar el menú al hacer clic en el botón */
+      #menu-toggle:checked ~ .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+       /* Estilos para animar el botón de hamburguesa */
+      #menu-toggle:checked ~ .menu-btn .hamburger {
+        background-color: transparent;
+      }
+       #menu-toggle:checked ~ .menu-btn .hamburger:before {
+        transform: translateY(10px) rotate(45deg);
+      }
+       #menu-toggle:checked ~ .menu-btn .hamburger:after {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+</style>

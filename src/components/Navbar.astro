@@ -1,0 +1,41 @@
+---
+import { menuItems } from '../data/data'
+---
+
+<!-- //NAVBAR========================================== -->
+<div class='w-full bg-slate-400 fixed leading-[3rem] flex'>
+    <div
+        class='[display:none] sm:[display:block] cursor-pointer'
+    >
+        <img
+            src='/home.svg'
+            alt=''
+        />
+    </div>
+
+    <div
+        class='flex-grow justify-start mr-auto [display:block] sm:[display:none] cursor-pointer'
+    >
+        <img
+            src='/hamburguesa.svg'
+            alt=''
+        />
+    </div>
+    
+    <nav
+    class='mx-auto whitespace-nowrap [display:none] sm:[display:block] border-2'
+    >
+    <ul class='flex'>
+        {
+            menuItems.map((item) => (
+                <li class='px-[2rem]'>
+                    <a href={item.url}>{item.titulo}</a>
+                    </li>
+                    ))
+                }
+        </ul>
+    </nav>
+    <span class="px-[1rem] [display:block] sm:[display:none]">
+        968 55 33 22
+    </span>
+</div>

@@ -14,7 +14,7 @@ export const menuItems: MenuItems[] = [
         url:"/productos"
     },
     {
-        titulo:"Nosotros",
+        titulo:"Sobre Nosotros",
         url:"/productos"
     },
 ]
