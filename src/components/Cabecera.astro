@@ -5,7 +5,7 @@ import { menuItems } from "../data/data";
 ---
 
 <!-- //NAVBAR========================================== -->
-<nav class='flex justify-center bg-white py-4 relative'>
+<nav class='flex justify-center bg-white ab'>
     <ul id="david" class='flex'>
         {
             menuItems.map((item) => (
@@ -14,11 +14,10 @@ import { menuItems } from "../data/data";
                 </li>
             ))
         }
-    </ul>
-
     <div id="menuDavid" class={`
-    absolute
-        bg-black/5 border-b-4 border-[--auxiliar1]
+    
+    absolute -z-10
+        bg-opacity-5 bg-black border-b-4 border-[--auxiliar1]
         translate-x-[var(--left)]
         translate-y-[var(--top)]
         left-0 top-0
@@ -29,6 +28,8 @@ import { menuItems } from "../data/data";
     `}>
 
     </div>
+    </ul>
+
 
 </nav>
 
