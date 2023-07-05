@@ -2,40 +2,50 @@
 import { menuItems } from '../data/data'
 ---
 
-<!-- //NAVBAR========================================== -->
-<div class='w-full bg-slate-400 fixed leading-[3rem] flex'>
-    <div
-        class='[display:none] sm:[display:block] cursor-pointer'
-    >
+<!-- ICONO DE HAMBURGUESA========================================= -->
+<div
+    id="ham"
+    class='absolute top-2 left-4 w-[2rem] z-30 hidden sm:visible cursor-pointer'
+>
+    <img
+        src='/hamburguesa.svg'
+        alt=''
+    />
+</div>
+
+<!-- ICONO DEL HOME============================================ -->
+<div
+    id="home"
+    class='absolute top-2 left-4 w-[2rem] hidden sm:visible z-40 cursor-pointer'
+>
+    <a href='/inicio'>
         <img
             src='/home.svg'
             alt=''
         />
-    </div>
+    </a>
+</div>
 
-    <div
-        class='flex-grow justify-start mr-auto [display:block] sm:[display:none] cursor-pointer'
-    >
-        <img
-            src='/hamburguesa.svg'
-            alt=''
-        />
-    </div>
-    
-    <nav
-    class='mx-auto whitespace-nowrap [display:none] sm:[display:block] border-2'
-    >
-    <ul class='flex'>
-        {
-            menuItems.map((item) => (
-                <li class='px-[2rem]'>
-                    <a href={item.url}>{item.titulo}</a>
+<!-- LISTA DEL MENU=================================================== -->
+<div class='w-full bg-slate-400 fixed leading-[3rem] flex opacity-30'>
+    <nav class='mx-auto whitespace-nowrap border-2'>
+        <ul
+            class='flex flex-col py-[3rem] sm:py-0 sm:flex-row'
+        >
+            {
+                menuItems.map((item) => (
+                    <li class='px-[2rem]'>
+                        <a href={item.url}>{item.titulo}</a>
                     </li>
-                    ))
-                }
+                ))
+            }
         </ul>
     </nav>
-    <span class="px-[1rem] [display:block] sm:[display:none]">
-        968 55 33 22
-    </span>
 </div>
+
+<!-- TELEFONO======================================================= -->
+<span
+    class='absolute top-0 right-4 leading-[3rem] px-[1rem] visible sm:visible justify-end ml-auto'
+>
+    968 55 33 22
+</span>
