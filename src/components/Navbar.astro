@@ -27,11 +27,17 @@ import { menuItems } from '../data/data'
 </div>
 
 <!-- LISTA DEL MENU=================================================== -->
-<div class='w-full bg-slate-400 fixed leading-[3rem] flex opacity-30'>
+<div class='w-full bg-slate-400 fixed leading-[3rem] flex opacity-30
+h-[3rem] 
+transition-transform
+duration-500
+-translate-y-full
+
+sm:translate-y-0'>
     <nav class='mx-auto whitespace-nowrap border-2'>
         <ul
             id="desplegable"
-            class='hidden flex-col py-[3rem] sm:flex sm:py-0 sm:flex-row transition-transform duration-1000 transform translate-y-full sm:translate-y-0'
+            class="flex"
         >
         
             {
@@ -56,14 +62,14 @@ import { menuItems } from '../data/data'
     const desplegable = document.querySelector('#desplegable')
 
     boton.addEventListener( 'click', () => {
-        if( desplegable.classList.contains('hidden')){
-        desplegable.classList.replace('hidden', 'block')
-    }else if(desplegable.classList.contains('block')){
-        desplegable.classList.replace('block', 'hidden')
-    }
+        desplegable.classList.replace( 'flex','flex-col')
+        desplegable.classList.add( 'duration-500', 'translate-y-0')
+
+    //     if( desplegable.classList.contains('hidden')){
+    //     desplegable.classList.replace('hidden', 'block')
+    // }else if(desplegable.classList.contains('block')){
+    //     desplegable.classList.replace('block', 'hidden')
+    // }
         
     })
 </script>
-
-html
-<div class="h-10 w-10 bg-blue-500 fixed bottom-0 left-0 right-0 mx-auto transition-transform duration-1000 transform translate-y-full sm:translate-y-0 sm:translate-y-full sm:block sm:bottom-auto sm:top-0"></div>
