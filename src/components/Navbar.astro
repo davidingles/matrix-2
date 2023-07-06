@@ -31,7 +31,7 @@ import { menuItems } from '../data/data'
     <nav class='mx-auto whitespace-nowrap border-2'>
         <ul
             id="desplegable"
-            class='hidden flex-col py-[3rem] sm:flex sm:py-0 sm:flex-row'
+            class='hidden flex-col py-[3rem] sm:flex sm:py-0 sm:flex-row transition-transform duration-1000 transform translate-y-full sm:translate-y-0'
         >
         
             {
@@ -64,3 +64,6 @@ import { menuItems } from '../data/data'
         
     })
 </script>
+
+html
+<div class="h-10 w-10 bg-blue-500 fixed bottom-0 left-0 right-0 mx-auto transition-transform duration-1000 transform translate-y-full sm:translate-y-0 sm:translate-y-full sm:block sm:bottom-auto sm:top-0"></div>
